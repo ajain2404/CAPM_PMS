@@ -1,0 +1,4 @@
+specVersion: "2.5"
+metadata:
+  name: com.ari.pms.ui.pms
+type: application
