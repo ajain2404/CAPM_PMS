@@ -1,7 +1,5 @@
 using PatientService as service from '../../srv/patient-service';
 
-annotate service.Patient with @odata.draft.enabled;
-
 annotate service.Patient {
     Gender @Common: {ValueListWithFixedValues};
 }
@@ -160,6 +158,10 @@ annotate service.Symptoms with @(
         }]
     },
     UI.LineItem           : [
+        {
+            Value: SymptomID,
+            Label: 'SerialNo.'
+        },
         {
             Value: Symptom,
             Label: 'Symptom'

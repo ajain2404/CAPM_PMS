@@ -6,10 +6,16 @@
       "request": "launch",
       "type": "node",
       "cwd": "${workspaceFolder}",
-      "runtimeExecutable": "cds",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": [
+        "-n"
+      ],
       "args": [
-        "serve",
-        "--with-mocks",
+        "--",
+        "cds",
+        "run",
+        "--port",
+        "4003",
         "--in-memory?"
       ],
       "skipFiles": [

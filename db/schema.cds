@@ -17,9 +17,10 @@ entity Patient : managed {
 }
 
 entity Visit : managed {
-  @readonly
+      @readonly
   key patient   : Association to Patient;
-  @readonly
+
+      @readonly
   key VisitID   : Integer;
       VisitDate : Date;
       Symptoms  : Composition of many Symptoms
@@ -27,10 +28,13 @@ entity Visit : managed {
 }
 
 entity Symptoms : managed {
-  @readonly
-  key Visit   : Association to Visit;
-  key Symptom : String(20);
-      Details : String(200);
+      @readonly
+  key Visit     : Association to Visit;
+  key SymptomID : Integer;
+
+      @mandatory
+      Symptom   : String(20);
+      Details   : String(200);
 
 }
 
